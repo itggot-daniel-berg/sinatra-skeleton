@@ -137,7 +137,7 @@ Since we have a new database, none of the data has been transferred.
 
 1. Run `heroku run rake db:seed` to seed the database from [db/seed.rb](./db/seed.rb)
 
-### 2.5.1 Troubleshooting ###
+### 2.5.2 Troubleshooting ###
 
 Sometimes the app won't start, or maybe it will crash. To view the logs, run
 
