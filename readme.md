@@ -86,7 +86,7 @@ If you add a gem to `Gemfile` you must rerun `bundle install` to generate a new 
 In order to not have to manually restart the server when we are developing, we use `rerun`. Rerun will watch the app's folder,
 and automatically restart the server when it detects a change in a file.
 
-1. `rerun rackup --ignore "*.{slim,js,css,coffee}"
+1. `rerun rackup --ignore "*.{slim,js,css,coffee}"`
 
     This will launch rerun, which will, in turn, start the server using `rackup`. The `--ignore` argument tells rerun *not* to restart the app if it detects changes in .slim, .js, .css or .coffee files (changes in these
     types of files do not require a relaunch of the server)
@@ -110,7 +110,7 @@ and automatically restart the server when it detects a change in a file.
 ### 2.5 Deploying the app to Heroku ###
 
 **Since Heroku uses the git repository for deployment, you must *always* commit the latest changes to the repository before
-deploying the app.
+deploying the app.**
 
 1. In the apps root folder, run `heroku create`
 
@@ -142,6 +142,6 @@ Sometimes the app won't start, or maybe it will crash. To view the logs, run
 1. `heroku logs` in the apps root folder.
 
 
-Sometimes you need to do some "cowboy programming". To acces the apps console, run
+Sometimes you need to do some "cowboy programming". To access the app's console, run
 
 1. `heroku run racksh`

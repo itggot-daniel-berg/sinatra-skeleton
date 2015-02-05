@@ -1,7 +1,7 @@
 # Tell bundler where to fetch gems
 source 'https://rubygems.org'
 
-# Ttell heroku and bundler which version of ruby to use
+# Tell heroku and bundler which version of ruby to use
 ruby '2.1.4'
 
 # Gems used by all environments (development, production & test)
