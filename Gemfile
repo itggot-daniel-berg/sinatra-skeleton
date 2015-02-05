@@ -10,7 +10,6 @@ gem 'sinatra-partial'
 gem 'data_mapper'
 gem 'slim'
 gem 'tilt', '~> 1.4.1' #temporary fix
-gem 'rerun'
 gem 'racksh'
 
 # Used during local development (on your own machine)
@@ -18,6 +17,7 @@ group :development do
 
   # Use SQLite
   gem 'dm-sqlite-adapter', group: :development
+  gem 'rerun'
 
 end
 
