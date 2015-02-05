@@ -103,11 +103,44 @@ and automatically restart the server when it detects a change in a file.
 
 ### 2.4 Running the tests ###
 
+There are three different types of tests, testing different aspects of the application.
+
+The tests are run using rake tasks, specified in [rakefile](./rakefile).
+
 #### 2.4.1 Route tests ####
+
+Route tests test the routes (get and/or post) specified in [app.rb](./app.rb).
+
+Route tests are located in `test/routes/`
+
+Look in [test/routes/base_test.rb](./test/routes/sample_test.rb) for examples of what you can test using route tests.
+
+1. To run route tests: `rake test:routes`
+2. To create new route tests: create files named `*_test.rb` in `test/routes/`
 
 #### 2.4.2 Model tests ####
 
+Model tests test the models specified in `models/`
+
+Model tests are located in `test/models`
+
+Look in [test/models/sample_test.rb](./test/models/sample_test.rb) for examples of what you can test using model tests
+
+1. To run model tests: `rake test:models`
+2. To create new model tests: create files named `name_of_model_test.rb` in `test/models`
+
 #### 2.4.3 Acceptance tests ####
+
+Acceptance tests test the *entire* application; routes, models, database, and frontend.
+
+If the tests do not rely upon javasript, the tests are in a headless browser using [Capybara](https://github.com/jnicklas/capybara).
+
+If the tests require javascript, the tests must be run in a programatically controlled browser using [Selenium](http://www.seleniumhq.org).
+
+Look in [test/acceptance/sample_spec.rb](./test/acceptance/sample_spec.rb) for examples of what you can test using acceptance tests.
+
+1. To run acceptance tests: `rake test:acceptance`
+2. To create new acceptance tests: create files named `name_of_feature_spec.rb` in `test/acceptance`
 
 ### 2.5 Deploying the app to Heroku ###
 
