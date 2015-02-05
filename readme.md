@@ -133,7 +133,7 @@ Look in [test/models/sample_test.rb](./test/models/sample_test.rb) for examples 
 
 Acceptance tests test the *entire* application; routes, models, database, and frontend.
 
-If the tests do not rely upon javasript, the tests are in a headless browser using [Capybara](https://github.com/jnicklas/capybara).
+If the tests do not rely upon javascript, the tests are in a headless browser using [Capybara](https://github.com/jnicklas/capybara).
 
 If the tests require javascript, the tests must be run in a programatically controlled browser using [Selenium](http://www.seleniumhq.org).
 
