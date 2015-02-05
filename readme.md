@@ -83,7 +83,7 @@ This can be done from the terminal, but is probably easier done in the [GitHub c
 
 If you add a gem to [Gemfile](./Gemfile) you must rerun `bundle install` to generate a new `Gemfile.lock`.
 
-### 2.3 Lunching the app for development ###
+### 2.3 Launching the app for development ###
 
 In order to not have to manually restart the server when we are developing, we use [rerun](https://github.com/alexch/rerun). Rerun will watch the app's folder,
 and automatically restart the server when it detects a change in a file.
