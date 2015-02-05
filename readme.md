@@ -1,54 +1,56 @@
 # Sinatra Skeleton #
 
-This is a skeleton app for developing Heroky-deployable modular Sinatra apps with datamapper, slim, rspec & capybara.
+This is a skeleton app for developing [Heroku](https://www.heroku.com)-deployable modular [Sinatra](http://www.sinatrarb.com) apps with [DataMapper](http://datamapper.org), [Slim](http://slim-lang.com), [RSpec](http://rspec.info) & [Capybara](https://github.com/jnicklas/capybara).
 
-Download the zip.
+[Download the zip](https://github.com/itgsoddabe/sinatra-skeleton/archive/master.zip).
 
 ## 1 Prerequisites ###
 
 ### 1.1 Homebrew ###
 
-Skip this step if homebrew is already installed. Not sure? Try `brew -v`
+Skip this step if [Homebrew](http://brew.sh) is already installed. Not sure? Try `brew -v`
+
+1. Install Homebrew: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 ### 1.2 Git ###
 
-Skip this step if git is already installed. Not sure? Try `git --version`
+Skip this step if [git](http://git-scm.com) is already installed. Not sure? Try `git --version`
 
-1. `brew install git`
+1. Install git: `brew install git`
 
 ### 1.3 Postgresql ###
 
-Skip this step if rbenv is already installed. Not sure? Try `postgres --version`
+Skip this step if [PostgreSQL](http://www.postgresql.org) is already installed. Not sure? Try `postgres --version`
 
-1. `brew install postgresql`
+1. Install postgresql: `brew install postgresql`
 
 ### 1.4 Rbenv & Ruby-build ###
 
-Skip this step if rbenv is already installed. Not sure? Try `rbenv -v` & `ruby-build --version`
+Skip this step if [rbenv](https://github.com/sstephenson/rbenv) and [ruby-build](https://github.com/sstephenson/ruby-build) are already installed. Not sure? Try `rbenv -v` & `ruby-build --version`
 
-1. `brew install rbenv`
-2. `brew install ruby-build`
+1. Install rbenv: `brew install rbenv`
+2. Install ruby-build `brew install ruby-build`
 
 ### 1.5 Ruby 2.1.4 ###
 
 Skip this step if Ruby 2.1.4 is already installed. Not sure? Try `rbenv versions`
 
-1. Update homebrew to get access to the latest versions of the packages: `brew update`
+1. Update Homebrew to get access to the latest versions of the packages: `brew update`
 2. Upgrade rbenv & ruby-build: `brew upgrade rbenv ruby-build`
 3. Install Ruby 2.1.4: `rbenv install 2.1.4`
 
 ### 1.6 Bundler ###
 
-Skip this step if bundler is already installed. Not sure? Try (in the sinatra skeleton app's root folder) `gem list`
+Skip this step if [Bundler](http://bundler.io) is already installed. Not sure? Try (in the app's root folder) `gem list`
 
-1. `gem install bundler`
-2. `rbenv rehash` to give the shell access to the `bundle` executable
+1. Install bundler: `gem install bundler`
+2. Give the shell access to the `bundle` executable: `rbenv rehash`
 
 ### 1.7 Heroku Toolbelt ###
 
-Skip this step if Heroku toolbelt is already installed. Not sure? Try `heroku --version`
+Skip this step if [Heroku toolbelt](https://toolbelt.heroku.com) is already installed. Not sure? Try `heroku --version`
 
-1. Download and install Heroku Toolbelt from [toolbelt.heroku.com](https://toolbelt.heroku.com).
+1. Download and install Heroku toolbelt from [toolbelt.heroku.com](https://toolbelt.heroku.com).
 
 ## 2 How the pieces fit together ##
 
@@ -59,20 +61,20 @@ This can be done from the terminal, but is probably easier done in the GitHub cl
 
 1. Start the GitHub client
 2. In the `File` menu, select `Add Local Repository`
-3. Select the Sinatra skeleton app's root folder and click `add`
+3. Select app's root folder and click `add`
 4. When asked if you want to "create a new git repository here?", click `Create and Add`
 
 ### 2.2 Installing required gems ###
 
 `Gemfile` contains a listing of all required gems.
 
-1. Go to the Sinatra skeleton app's root folder
+1. Go to the app's root folder
 2. run `bundle install`
 
     This will
 
     1. Download and install all gems listed in `Gemfile`
-    2. Create `Gemfile.lock`, which contains a listing of which *versions* of the gems specified in `Gemfile` that have been installed.
+    2. Create (or update) `Gemfile.lock`, which contains a listing of which *versions* of the gems specified in `Gemfile` that have been installed.
 
     Heroku uses `Gemfile.lock` to install the same versions of the gems, making sure that the app will work the same way on Heroku as it does on your own machine.
 
