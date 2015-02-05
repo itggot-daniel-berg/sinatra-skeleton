@@ -66,7 +66,7 @@ This can be done from the terminal, but is probably easier done in the GitHub cl
 
 ### 2.2 Installing required gems ###
 
-`Gemfile` contains a listing of all required gems.
+[Gemfile](./blob/master/Gemfile) contains a listing of all required gems.
 
 1. Go to the app's root folder
 2. run `bundle install`
