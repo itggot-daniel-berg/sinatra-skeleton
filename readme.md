@@ -29,7 +29,7 @@ Skip this step if [PostgreSQL](http://www.postgresql.org) is already installed. 
 Skip this step if [rbenv](https://github.com/sstephenson/rbenv) and [ruby-build](https://github.com/sstephenson/ruby-build) are already installed. Not sure? Try `rbenv -v` & `ruby-build --version`
 
 1. Install rbenv: `brew install rbenv`
-2. Install ruby-build `brew install ruby-build`
+2. Install ruby-build: `brew install ruby-build`
 
 ### 1.5 Ruby 2.1.4 ###
 
@@ -57,7 +57,7 @@ Skip this step if [Heroku toolbelt](https://toolbelt.heroku.com) is already inst
 ### 2.1 Creating a git repository ###
 
 In order to sync your repository with GitHub & deploy your app to Heroku, you will need a git repository.
-This can be done from the terminal, but is probably easier done in the GitHub client.
+This can be done from the terminal, but is probably easier done in the [GitHub client](https://mac.github.com).
 
 1. Start the GitHub client
 2. In the `File` menu, select `Add Local Repository`
@@ -73,19 +73,19 @@ This can be done from the terminal, but is probably easier done in the GitHub cl
 
     This will
 
-    1. Download and install all gems listed in `Gemfile`
-    2. Create (or update) `Gemfile.lock`, which contains a listing of which *versions* of the gems specified in `Gemfile` that have been installed.
+    1. Download and install all gems listed in [Gemfile](./Gemfile)
+    2. Create (or update) `Gemfile.lock`, which contains a listing of which *versions* of the gems specified in [Gemfile](./Gemfile) that have been installed.
 
     Heroku uses `Gemfile.lock` to install the same versions of the gems, making sure that the app will work the same way on Heroku as it does on your own machine.
 
-3. `rbenv rehash` to give the shell access to the `rerun` and `racksh` executables.
+3. `rbenv rehash` to give the shell access to the [rerun](https://github.com/alexch/rerun) and [racksh](https://github.com/sickill/racksh) executables.
 4. Add `Gemfile.lock` to the repository, write a nice commit message, and commit the changes.
 
-If you add a gem to `Gemfile` you must rerun `bundle install` to generate a new `Gemfile.lock`.
+If you add a gem to [Gemfile](./Gemfile) you must rerun `bundle install` to generate a new `Gemfile.lock`.
 
 ### 2.3 Lunching the app for development ###
 
-In order to not have to manually restart the server when we are developing, we use `rerun`. Rerun will watch the app's folder,
+In order to not have to manually restart the server when we are developing, we use [rerun](https://github.com/alexch/rerun). Rerun will watch the app's folder,
 and automatically restart the server when it detects a change in a file.
 
 1. `rerun rackup --ignore "*.{slim,js,css,coffee}"`
@@ -93,7 +93,7 @@ and automatically restart the server when it detects a change in a file.
     This will launch rerun, which will, in turn, start the server using `rackup`. The `--ignore` argument tells rerun *not* to restart the app if it detects changes in .slim, .js, .css or .coffee files (changes in these
     types of files do not require a relaunch of the server)
 
-    `rackup` will look in `config.ru` for instructions on how to start the server.
+    `rackup` will look in [config.ru](./config.ru) for instructions on how to start the server.
 
 2. Look for the line telling which port the server is running on (normally 9292)
 
@@ -127,15 +127,15 @@ deploying the app.**
     1. Determines what kind of app it is (in our case Ruby).
     2. Downloads and installs the gems specified in `Gemfile.lock` (but only the ones specified in the `production` group.
     Heroku caches the gems so it does not have to download them every time you push changes to the app.
-    3. Starts the applications server running the command specified in `Procfile`
+    3. Starts the applications server running the command specified in [Procfile](./Procfile)
 
     To view the application, either run `heroku open`, which points your web browser to the apps url, or tell the browser to go there manually.
 
 ### 2.5.1 Seeding the database ####
 
-Since we have a new database, none of the data has been transfered.
+Since we have a new database, none of the data has been transferred.
 
-1. Run `heroku run rake db:seed` to seed the database from `db/seed.rb`
+1. Run `heroku run rake db:seed` to seed the database from [db/seed.rb](./db/seed.rb)
 
 ### 2.5.1 Troubleshooting ###
 
@@ -144,6 +144,6 @@ Sometimes the app won't start, or maybe it will crash. To view the logs, run
 1. `heroku logs` in the apps root folder.
 
 
-Sometimes you need to do some "cowboy programming". To access the app's console, run
+Sometimes you might feel the need to do some "[cowboy coding](http://en.wikipedia.org/wiki/Cowboy_coding)".
 
-1. `heroku run racksh`
+1.  To access the app's console: `heroku run racksh`
