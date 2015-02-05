@@ -122,14 +122,16 @@ deploying the app.**
 
 3. In the apps root folder, run `git push heroku master`
 
-    This pushes the application to Github. Gitub then
+    This pushes the application to Github. Gitub then:
 
     1. Determines what kind of app it is (in our case Ruby).
-    2. Downloads and installs the gems specified in `Gemfile.lock` (but only the ones specified in the `production` group.
-    Heroku caches the gems so it does not have to download them every time you push changes to the app.
+    2. Downloads and installs the gems specified in `Gemfile.lock` (but only the ones specified in the `production` group).
+
+    Heroku caches the gems so it does not have to install them every time you push changes to the app.
+
     3. Starts the applications server running the command specified in [Procfile](./Procfile)
 
-    To view the application, either run `heroku open`, which points your web browser to the apps url, or tell the browser to go there manually.
+    To view the application, either run `heroku open`, which points your web browser to the app's url, or tell the browser to go there manually.
 
 ### 2.5.1 Seeding the database ####
 
@@ -143,7 +145,6 @@ Sometimes the app won't start, or maybe it will crash. To view the logs, run
 
 1. `heroku logs` in the apps root folder.
 
-
 Sometimes you might feel the need to do some "[cowboy coding](http://en.wikipedia.org/wiki/Cowboy_coding)".
 
-1.  To access the app's console: `heroku run racksh`
+1. To access the app's console: `heroku run racksh`
