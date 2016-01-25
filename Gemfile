@@ -18,7 +18,8 @@ group :development do
   # Use SQLite
   gem 'dm-sqlite-adapter', group: :development
   gem 'rerun'
-
+  gem 'thin'
+  
 end
 
 # Used during production (on Heroku), when your application is 'live'
