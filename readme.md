@@ -4,55 +4,13 @@ This is a skeleton app for developing [Heroku](https://www.heroku.com)-deployabl
 
 [Download the zip](https://github.com/itgsoddabe/sinatra-skeleton/archive/master.zip).
 
-## 1 Prerequisites ###
-
-### 1.1 Homebrew ###
-
-Skip this step if [Homebrew](http://brew.sh) is already installed. Not sure? Try `brew -v`
-
-1. Install Homebrew: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-### 1.2 Git ###
-
-Skip this step if [git](http://git-scm.com) is already installed. Not sure? Try `git --version`
-
-1. Install git: `brew install git`
-
-### 1.3 Postgresql ###
-
-Skip this step if [PostgreSQL](http://www.postgresql.org) is already installed. Not sure? Try `postgres --version`
-
-1. Install postgresql: `brew install postgresql`
-
-### 1.4 Rbenv & Ruby-build ###
-
-Skip this step if [rbenv](https://github.com/sstephenson/rbenv) and [ruby-build](https://github.com/sstephenson/ruby-build) are already installed. Not sure? Try `rbenv -v` & `ruby-build --version`
-
-1. Install rbenv: `brew install rbenv`
-2. Install ruby-build: `brew install ruby-build`
-
-### 1.5 Ruby 2.1.4 ###
-
-Skip this step if Ruby 2.1.4 is already installed. Not sure? Try `rbenv versions`
-
-1. Update Homebrew to get access to the latest versions of the packages: `brew update`
-2. Upgrade rbenv & ruby-build: `brew upgrade rbenv ruby-build`
-3. Install Ruby 2.1.4: `rbenv install 2.1.4`
-
-### 1.6 Bundler ###
-
-Skip this step if [Bundler](http://bundler.io) is already installed. Not sure? Try (in the app's root folder) `gem list`
-
-1. Install bundler: `gem install bundler`
-2. Give the shell access to the `bundle` executable: `rbenv rehash`
-
-### 1.7 Heroku Toolbelt ###
+### Step 0 Heroku Toolbelt ###
 
 Skip this step if [Heroku toolbelt](https://toolbelt.heroku.com) is already installed. Not sure? Try `heroku --version`
 
 1. Download and install Heroku toolbelt from [toolbelt.heroku.com](https://toolbelt.heroku.com).
 
-## 2 How the pieces fit together ##
+## Developing and deploying to Heroku ##
 
 ### 2.1 Creating a git repository ###
 
@@ -78,9 +36,6 @@ This can be done from the terminal, but is probably easier done in the [GitHub c
 
     Heroku uses `Gemfile.lock` to install the same versions of the gems, making sure that the app will work the same way on Heroku as it does on your own machine.
 
-3. `rbenv rehash` to give the shell access to the [rerun](https://github.com/alexch/rerun) and [racksh](https://github.com/sickill/racksh) executables.
-4. Add `Gemfile.lock` to the repository, write a nice commit message, and commit the changes.
-
 If you add a gem to [Gemfile](./Gemfile) you must rerun `bundle install` to generate a new `Gemfile.lock`.
 
 ### 2.3 Launching the app for development ###
@@ -88,7 +43,7 @@ If you add a gem to [Gemfile](./Gemfile) you must rerun `bundle install` to gene
 In order to not have to manually restart the server when we are developing, we use [rerun](https://github.com/alexch/rerun). Rerun will watch the app's folder,
 and automatically restart the server when it detects a change in a file.
 
-1. `rerun rackup --ignore "*.{slim,js,css,coffee}"`
+1. `rerun "rackup --ignore "*.{slim,js,css,coffee}" --host 0.0.0.0`""
 
     This will launch rerun, which will, in turn, start the server using `rackup`. The `--ignore` argument tells rerun *not* to restart the app if it detects changes in .slim, .js, .css or .coffee files (changes in these
     types of files do not require a relaunch of the server)
