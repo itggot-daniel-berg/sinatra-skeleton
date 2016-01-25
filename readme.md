@@ -43,7 +43,7 @@ If you add a gem to [Gemfile](./Gemfile) you must rerun `bundle install` to gene
 In order to not have to manually restart the server when we are developing, we use [rerun](https://github.com/alexch/rerun). Rerun will watch the app's folder,
 and automatically restart the server when it detects a change in a file.
 
-1. `rerun "rackup --ignore "*.{slim,js,css,coffee}" --host 0.0.0.0`""
+1. `rerun 'rackup --ignore "*.{slim,js,css,coffee}" --host 0.0.0.0'`
 
     This will launch rerun, which will, in turn, start the server using `rackup`. The `--ignore` argument tells rerun *not* to restart the app if it detects changes in .slim, .js, .css or .coffee files (changes in these
     types of files do not require a relaunch of the server)
