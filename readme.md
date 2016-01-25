@@ -43,7 +43,7 @@ If you add a gem to [Gemfile](./Gemfile) you must rerun `bundle install` to gene
 In order to not have to manually restart the server when we are developing, we use [rerun](https://github.com/alexch/rerun). Rerun will watch the app's folder,
 and automatically restart the server when it detects a change in a file.
 
-1. `rerun 'rackup --ignore "*.{slim,js,css,coffee}" --host 0.0.0.0'`
+1. ` rerun --ignore "*.{slim,js,css,coffee}" "rackup --host 0.0.0.0"                `
 
     This will launch rerun, which will, in turn, start the server using `rackup`. The `--ignore` argument tells rerun *not* to restart the app if it detects changes in .slim, .js, .css or .coffee files (changes in these
     types of files do not require a relaunch of the server)
@@ -52,9 +52,18 @@ and automatically restart the server when it detects a change in a file.
 
 2. Look for the line telling which port the server is running on (normally 9292)
 
-        [2015-02-04 23:50:03] INFO  WEBrick::HTTPServer#start: pid=27424 port=9292
+    *******************
+    * DEVELOPMENT ENV *
+    *******************
+    Thin web server (v1.6.4 codename Gob Bluth)
+    Maximum connections set to 1024
+    Listening on 0.0.0.0:9292, CTRL+C to stop
+    12:32:00 [rerun] Watching . for **/*.{rb,js,coffee,css,scss,sass,erb,html,haml,ru,yml,slim,md,feature} (ignoring *.{slim,js,css,coffee})
+
 
 3. Launch your browser and point it to `localhost:9292`
+
+You should see `Hello, Sinatra!`
 
 ### 2.4 Running the tests ###
 
