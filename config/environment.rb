@@ -1,6 +1,10 @@
 # Load all models
 Dir["./models/*.rb"].each {|model| require model}
 
+#Load all helpers
+Dir["./helpers/*.rb"].each {|helper| require helper}
+
+
 # Used during local development (on your own machine)
 configure :development do
 
